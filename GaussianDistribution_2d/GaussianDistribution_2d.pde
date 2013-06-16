@@ -6,10 +6,11 @@ boolean randomizeSizes;
 int ellipseSize;
 void setup(){
   frameRate(120);
+ 
   background(255,255,255);
   size(displayWidth/2, displayHeight/2);
-  xStandardDeviation = 120;
-  yStandardDeviation = 120;
+  xStandardDeviation = 40;
+  yStandardDeviation = 40;
   xMean = displayWidth/4;
   yMean = displayHeight/4;
   generator= new Random();
@@ -39,7 +40,7 @@ void draw(){
     int distance = (int)dist(displayWidth/4, displayHeight/4, x,y);
     
     //ellipse size based on the distance from the viewport center
-    ellipseSize = (int)map(distance, 0 , (int)sqrt((displayWidth*displayWidth + displayHeight*displayHeight)/16), 2, 40);    
+    ellipseSize = (int)map(distance, 0 , 100*(int)sqrt((displayWidth*displayWidth + displayHeight*displayHeight)/16), 50, 1);    
   }
    
   ellipse(x, y, ellipseSize, ellipseSize);
